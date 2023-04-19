@@ -1,0 +1,114 @@
+.team {
+    padding: $section-padding;
+    .container {
+        text-align: center;
+    }
+    &__title {
+        font-family: $font-family-title;
+        font-size: $font-size-title+px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: $color-title;
+        margin-bottom: 49px;
+    }
+    &__desc {
+        font-family: $font-family-text;
+        font-size: $font-size-base;
+        line-height: 1.5;
+        font-weight: 400;
+        color: $color-font-base;
+        margin-bottom: 84px;
+    }
+    &__main {
+        // display: flex;
+        // justify-content: center;
+        // align-items: baseline;
+        // flex-wrap: wrap;
+    }
+    &__item {
+        text-align: center;
+        // width: 25%;
+        // margin-bottom: 30px;
+        // @include Laptop-1024 {
+        //     width: 40%;
+        // }
+        // @include MobileL-425 {
+        //     width: 70%;
+        // }
+        &--photo {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            @include Tablet-768 {
+                width: 80%;
+            }
+            @include MobileL-425 {
+                width: 60%;
+            }
+        }
+        &--name {
+            font-family: $font-family-title;
+            font-size: 25px;
+            line-height: 1.2;
+            font-weight: 500;
+            color: $color-font-base; 
+            margin-bottom: 15px;           
+        }
+        &--prof {
+            font-family: $font-family-title;
+            font-size: 18px;
+            line-height: 1.2;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+            color: $color-font-base;
+            margin-bottom: 32px;
+        }
+        &--social {
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+        }
+        &--link {
+            font-size: 25px;
+            line-height: 1.2;
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            color: $color-acent;
+            margin: 0 10px;
+        }
+    }
+}
+
+.team {
+    .team-slider {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+        @include Laptop-1024 {
+            max-width: 900px;
+        }        
+        @include Laptop-900 {
+            max-width: 800px;
+        }        
+    }
+    .swiper {
+        position: relative;
+        padding-bottom: 50px;
+        max-width: 850px;    
+        @include Laptop-1024 {
+            max-width: 750px;
+        }    
+        @include Laptop-900 {
+            max-width: 650px;
+        }    
+    }
+    .slider-buttons {
+        @include Tablet-768 {
+            display: none;
+        }
+    }
+    .swiper-pagination {
+        position: absolute;
+        bottom: 0;
+    }
+}

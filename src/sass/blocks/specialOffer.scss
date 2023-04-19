@@ -1,0 +1,27 @@
+.specialOffer {
+    background-color: #e2e2e2;
+    padding: 50px 0;
+    // // .specialOffer__wrapper
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include Laptop-1024 {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    // .specialOffer__title
+
+    &__title {
+        font-size: 30px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #494949;
+        text-align: center;
+        @include Laptop-1024 {
+            margin-bottom: 20px;
+        }
+    }
+}

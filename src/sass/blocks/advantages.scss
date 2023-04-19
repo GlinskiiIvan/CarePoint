@@ -1,0 +1,68 @@
+.advantages {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        text-align: center;
+        padding: 70px 50px;
+        width: 25%;
+
+        @include Laptop-1024 {
+            width: 50%;
+        }
+
+        @include Tablet-768 {
+            padding: 70px 10px;
+        }
+
+        @include MobileS-320 {
+            width: 100%;
+        }
+
+        &:first-child {
+            background-color: #43b1d2;
+        }
+
+        &:nth-child(2) {
+            background-color: #3fb6c6;
+        }
+
+        &:nth-child(3) {
+            background-color: #3cbbbb;
+        }
+
+        &:last-child {
+            background-color: #37c3a8;
+        }
+
+        &--img {
+            background-color: #fff;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            img {
+                max-width: 100%;
+            }
+        }
+
+        &--title {
+            font-family: $font-family-title;
+            font-size: 30px;
+            font-weight: 700;
+            color: $color-white;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        &--text {
+            font-family: $font-family-text;
+            font-size: 16px;
+            font-weight: 400;
+            color: $color-white;
+        }
+    }
+}

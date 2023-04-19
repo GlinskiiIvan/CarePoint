@@ -1,0 +1,101 @@
+.whyus {
+    padding: $section-padding;
+    background-color: $color-white;
+    text-align: center;
+    background-image: url('../img/whyUs_bg.png');
+    background-repeat: no-repeat no-repeat;
+    background-size: auto;
+    background-position-x: center;
+    background-position-y: bottom;
+
+    @include Tablet-768 {
+        background-image: none;
+    }
+
+    &__title {
+        font-family: $font-family-title;
+        @include adaptive-font($font-size-title, $font-size-title-min);
+        font-weight: 700;
+        color: $color-title;
+        margin-bottom: 30px;
+    }
+
+    &__subtitle {
+        font-family: $font-family-text;
+        font-size: $font-size-base;
+        font-weight: 400;
+        color: $color-font-base;
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 130px;
+
+        @include Tablet-768 {
+            width: 80%;
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 90px;
+
+        @include Tablet-768 {
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        width: 35%;
+
+        @include Tablet-768 {
+            width: 80%;
+        }
+
+        @include MobileL-425 {
+            margin-bottom: 40px;
+        }
+
+        &--title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 20px;
+
+            @include MobileL-425 {
+                flex-direction: column;
+                margin-bottom: 15px;
+            }
+        }
+
+        &--img {
+            background-color: $color-acent;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                max-width: 100%;
+            }
+        }
+
+        &--title {
+            font-family: $font-family-title;
+            font-size: 30px;
+            font-weight: 700;
+            color: $color-title;
+        }
+
+        &--text {
+            font-family: $font-family-text;
+            font-size: $font-size-base;
+            font-weight: 400;
+            color: $color-font-base;
+        }
+    }
+}

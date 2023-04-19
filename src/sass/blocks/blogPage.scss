@@ -1,0 +1,116 @@
+.blogPage.blog-wrapper {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 2fr 1fr; 
+    gap: 15px 15px; 
+    @include Laptop-1024 {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto 1fr; 
+        gap: 15px 15px; 
+        grid-template-areas: 
+            "sidebar"
+            "content";
+    }
+}
+
+.blogPage.blog__left {
+    @include Laptop-1024 {
+        grid-area: content;
+    }
+}
+
+.blogPage.blog__right {    
+    @include Laptop-1024 {
+        grid-area: sidebar;
+        margin: 0;
+    }
+}
+
+.blogPage.blog__left, .blogPage.blog__right {
+    width: auto;
+}
+
+.blogPage.blog__main {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px 30px;
+    margin: 0;
+    margin-bottom: 70px;
+    @include Tablet-768 {
+        gap: 40px 15px; 
+    }
+    @include MobileL-425 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 40px;
+        grid-template-areas:
+            "."
+            ".";
+    }
+}
+
+.blogPage.blog__item {
+    width: auto;
+    margin: 0;
+    &--preview {
+        width: 100%;
+    }
+    &--date {
+        span > a {
+            font-family: $font-family-text;
+            font-size: 15px;
+            font-weight: 400;
+            color: $color-font-base;
+            transition: all .3s ease;          
+            &:hover {
+                color: $color-acent;
+            }
+        }
+    }
+}
+
+/* sidebar */
+.blogPage.blog__right {
+    
+}
+
+.blogPage.blog__left {
+    .col {
+    }
+    .full {
+    }
+    .pagination {
+        ul {
+            display: flex;
+            column-gap: 5px;
+            flex-wrap: wrap;
+            row-gap: 30px;
+        }
+    }
+    .page-numbers {
+        transition: all .3s ease;  
+        background-color: gainsboro;
+        padding: 10px 15px;
+        border-radius: 3px;
+        font-family: $font-family-text;
+        font-size: 16px;
+        font-weight: 400;
+        color: $color-font-base;         
+        &:hover {
+            background-color: $color-acent;
+            color: #fff;            
+        }      
+    }
+    .prev {
+    }
+    .inactive {
+    }
+    .current {
+        background-color: $color-acent;
+        color: #fff;
+    }
+    .next {
+    }
+    
+}

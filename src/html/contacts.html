@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+
+<body>
+    @@include("chunck/header.html")
+
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts__wrapper">
+                <form action="#" class="contacts__form">
+                    <div class="contacts__form--top">
+                        <input type="text" class="contacts__form--input" placeholder="Name" name="Name">
+                        <input type="tel" class="contacts__form--input" placeholder="Phone" name="Phone">
+                    </div>
+                    <textarea class="contacts__form--textarea" name="Message" cols="30" rows="10" placeholder="Message"></textarea>
+                    <button class="contacts__form--btnSubmit btn-more" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    @@include("chunck/footer.html")
+    @@include("chunck/copyright.html")
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

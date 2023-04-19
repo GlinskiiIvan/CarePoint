@@ -1,0 +1,122 @@
+.blog{
+    padding: $section-padding;
+}
+
+.blog-wrapper {
+    display: flex;
+    @include Tablet-768 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.blog__left {
+    width: 60%;
+    text-align: center;
+    @include Tablet-768 {
+        width: 90%;
+        text-align: center;
+        margin-bottom: 50px;    
+    }
+}
+
+.blog__title {
+    font-family: $font-family-title;
+    font-size: $font-size-title+px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: $color-title;
+    margin-bottom: 38px;
+    text-align: left;
+}
+
+.blog__desc {
+    font-family: $font-family-text;
+    font-size: $font-size-base;
+    font-weight: 400;
+    color: $color-font-base;
+    margin-bottom: 54px;
+    text-align: left;
+}
+
+.blog__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 -21px;
+
+    margin-bottom: 53px;
+    text-align: left;
+    @include MobileL-425 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;     
+        margin: 0;   
+    }
+}
+
+.blog__item {
+    width: 50%;
+    margin: 0 21px;
+    @include MobileL-425 {
+        margin: 0;
+        width: 100%;
+        margin-bottom: 50px;        
+    }
+}
+
+.blog__item--preview {
+    margin-bottom: 35px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.blog__item--title {
+    display: block;
+    font-family: $font-family-title;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    color: $color-title;
+    margin-bottom: 13px;
+}
+
+.blog__item--date {
+    font-family: $font-family-title;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    color: #0087be;
+    margin-bottom: 15px;
+}
+
+.blog__item--desc {
+    font-family: $font-family-text;
+    font-size: 16px;
+    font-weight: 400;
+    color: $color-font-base;
+}
+
+.blog__right {
+    width: 40%;
+    margin-left: 55px;
+    @include Tablet-768 {
+        width: 70%;
+        margin: 0;
+    }
+    @include MobileL-425 {
+        width: 90%;
+    }
+}
+
+.blog__accordion {
+
+}
+
+.blog__accordion--item {
+
+}
+

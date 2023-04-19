@@ -1,0 +1,54 @@
+.aboutUs {
+    padding: $section-padding;
+    // .aboutUs__wrapper
+
+    &__wrapper {                 
+    }
+
+    // .aboutUs__title
+
+    &__title {
+    }
+
+    // .aboutUs__content
+
+    &__content {
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 30px;   
+        @include Tablet-768 {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;            
+            grid-template-areas:
+                "."
+                ".";            
+        }     
+    }
+
+    // .aboutUs__img
+
+    &__img {
+        width: 100%;
+    }
+
+    // .aboutUs__desc
+
+    &__desc {
+    }
+
+    // .aboutUs__desc--title
+
+    &__desc--title {
+    }
+
+    // .aboutUs__desc--text
+
+    &__desc--text {
+        font-family: $font-family-text;
+        font-size: $font-size-base;
+        font-weight: 400;
+        color: $color-font-base;
+        line-height: 1.3;        
+    }
+}

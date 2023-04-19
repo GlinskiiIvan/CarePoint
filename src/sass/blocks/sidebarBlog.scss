@@ -1,0 +1,123 @@
+.sidebarBlog {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;        
+    .widget {
+    
+        // .widget_search
+    
+        &_search {
+            form {
+                position: relative;
+            }
+        }
+    
+        // .widget_text
+    
+        &_text {
+        }
+    
+        // .widget_categories
+    
+        &_categories {
+        }
+    
+        // .widget_tag
+    
+        &_tag {
+        }
+    }
+    .text-search {
+        border: 2px solid #494949;
+        border-radius: 5px;
+        outline: none;
+        width: 100%;
+        font-family: $font-family-text;
+        font-size: 16px;
+        font-weight: 400;
+        color: $color-font-base;
+        padding: 10px 40px 10px 20px;     
+        transition: all .3s ease;
+        &:focus {
+            border: 2px solid $color-acent;            
+        }   
+    }
+    .submit-search {
+        background-image: url("../img/search.svg");
+        background-position: center center;
+        background-repeat: no-repeat no-repeat;
+        background-size: cover;        
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);   
+        border: none;     
+        outline: none;
+        cursor: pointer;
+        transition: all .3s ease;        
+    }
+    .widget-title {
+        font-family: $font-family-title;
+        font-size: $font-size-title+px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: $color-title;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .textwidget {
+        font-family: $font-family-text;
+        font-size: 16px;
+        font-weight: 400;
+        color: $color-font-base;
+    }
+    .link-list {
+        a {
+            font-family: $font-family-text;
+            font-size: 16px;
+            font-weight: 400;
+            color: $color-font-base;
+            transition: all .3s ease;        
+            position: relative; 
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $color-acent;
+                transition: all .3s ease;                        
+            }   
+            &:hover {
+                color: $color-acent;
+            }
+            &:hover::after {
+                width: 100%;
+            }
+        }           
+    }
+    .cf {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;                     
+    }
+    .tagcloud {
+        a {
+            font-family: $font-family-text;
+            font-size: 16px;
+            font-weight: 400;
+            color: $color-font-base;
+            transition: all .3s ease;  
+            background-color: gainsboro;
+            padding: 10px 20px;
+            border-radius: 3px;
+            &:hover {
+                background-color: $color-acent;
+                color: #fff;
+            }                      
+        }
+    }    
+}

@@ -1,0 +1,30 @@
+.banner {
+    padding: 180px 0;
+    background-image: url("../img/banner_bg.png");
+    background-position: center center;
+    background-repeat: no-repeat no-repeat;
+    background-size: cover;
+    &__info {
+        text-align: center;
+        width: 50%;
+        @include Laptop-1024 {
+            margin: 0 auto;
+            width: 70%;            
+        }
+    }
+    &__title {
+        font-family: $font-family-title;
+        // font-size: $font-size-title+px;
+        @include adaptive-font($font-size-title, $font-size-title-min);
+        font-weight: 700;
+        color: $color-title;
+        margin-bottom: 20px;
+    }
+    &__text {
+        font-family: $font-family-text;
+        font-size: 17px;
+        font-weight: 400;
+        color: #3f3f3f;
+        margin-bottom: 20px;
+    }
+}

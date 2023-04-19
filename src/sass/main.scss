@@ -1,0 +1,279 @@
+@import "./vars";
+@import "./icon-fonts";
+
+@mixin adaptive-font($template-fs, $min-fs) {
+    $addSize: $template-fs - $min-fs;
+    $addMobSize: $addSize + $addSize * 0.7;
+
+    @media (min-width: 767px) {
+        font-size: calc(#{$min-fs + px} + #{$addSize} * (100vw / #{$container-max-width}));
+    }
+
+    @media (max-width: 767px) {
+        font-size: calc(#{$min-fs + px} + #{$addMobSize} * ((100vw - 320px) / #{$container-max-width}));
+    }
+}
+
+@mixin Laptop-1024 {
+    @media(max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin Laptop-900 {
+    @media(max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin Laptop-800 {
+    @media(max-width: 800px) {
+        @content;
+    }
+}
+
+@mixin Tablet-768 {
+    @media(max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin Tablet-450 {
+    @media(max-width: 450px) {
+        @content;
+    }
+}
+
+@mixin MobileL-425 {
+    @media(max-width: 425px) {
+        @content;
+    }
+}
+
+@mixin MobileM-375 {
+    @media(max-width: 375px) {
+        @content;
+    }
+}
+
+@mixin MobileS-320 {
+    @media(max-width: 320px) {
+        @content;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: $container-max-width + px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+._lock {
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {}
+
+.btn-more {
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font-family-text;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: $color-white;
+    padding: 0.8em 1.47em;
+    background-color: $color-acent;
+    border: none;
+    border-radius: 30px;
+    transition: all .3s linear;
+
+    &:hover {
+        transform: scale(1.1);
+        background-color: darken($color-acent, 5);
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+.title {
+    font-family: $font-family-title;
+    font-size: $font-size-title+px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: $color-title;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.text {
+    font-family: $font-family-text;
+    font-size: $font-size-base;
+    font-weight: 400;
+    color: $color-font-base;
+    line-height: 1.3;
+} 
+
+.slider {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+    &._active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;    
+    }
+    // .slider__container
+
+    &__container {
+        position: relative;
+        max-width: 1500px;
+        width: 100%;
+        height: 80vh;
+        padding: 0 15px;
+    }
+
+    // .slider__btn
+
+    &__btn {
+        position: absolute;            
+        cursor: pointer;
+        @include Tablet-768() {
+            display: none;
+        }
+        path {
+            fill: $color-acent;
+        }
+
+        &--left, &--right {
+            top: 50%;
+            transform: translateY(-50%);                
+        }
+
+        // .slider__btn_left
+
+        &--left {
+            left: 10px;
+        }
+
+        // .slider__btn_right
+
+        &--right {
+            right: 10px;
+        }
+
+        &--close {
+            top: 10px;
+            right: 10px;
+        }        
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  
+    }
+    
+}
+
+.accordion {
+    .accordion-header {    
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #e2e2e2;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all .3s linear;
+        &:hover {
+            background-color: darken($color-acent, 5);
+        }
+        &._active {
+            background-color: #0087be;
+            .accordion-icon {
+                &::after {
+                    transform: rotate(90deg) translate(-50%, 25%);
+                }                
+            }
+        }
+    }
+    
+    .accordion-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-white;
+    margin-right: 20px;
+    position: relative;
+    &::after {
+        position: absolute;
+        content: '';
+        
+        width:0;
+        height:0;
+        border-left: 10px solid $color-acent;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right:0;        
+        
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);        
+        transition: all .3s linear;
+    }    
+    }
+    
+    .accordion-title {
+    font-family: $font-family-title;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: $color-white;
+    }
+    
+    .accordion-content {
+    font-family: $font-family-text;
+    font-size: 16px;
+    font-weight: 400;
+    color: $color-font-base;
+    padding-top: 20px;
+    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s linear;
+    
+    &._active {
+        margin-bottom: 20px;        
+    }
+    }
+}
+
+@import "./blocks/*.scss";
